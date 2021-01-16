@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12'
+    - name: Run Content Updater
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        labels=$(echo "$GITHUB_CONTEXT" | jq '.event.issue.labels[].name')
+        node ./contentUpdater/index.js "${{ github.event.action }}" "${{ github.event.issue.title }}" "${labels}" "${{ github.event.issue.body }}"
+
+        git config --global user.email "you@example.com"
+        git config --global user.name "Marvin"
+        git status
+        git add .
+        git commit -m "test"
+        git push
