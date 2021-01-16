@@ -53,7 +53,6 @@
 
 <div class="title">
   <h1>{frontmatter.title}</h1>
-  {#if frontmatter.author}<small>By {frontmatter.author}</small>{/if}
 </div>
 
 {#if html}
