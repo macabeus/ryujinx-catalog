@@ -1,5 +1,5 @@
 <script>
-  export let templateHtml, settings;
+  export let templateHtml
 </script>
 
 <style>

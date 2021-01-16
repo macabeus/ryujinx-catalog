@@ -1,6 +1,6 @@
 <script>
-  export let game;
-  export let helpers;
+  export let game
+  export let helpers
 </script>
 
 <style>

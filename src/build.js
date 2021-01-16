@@ -1,5 +1,5 @@
-const { build } = require('@elderjs/elderjs');
+const { build } = require('@elderjs/elderjs')
 
-(async () => {
-  await build();
-})();
+;(async () => {
+  await build()
+})()

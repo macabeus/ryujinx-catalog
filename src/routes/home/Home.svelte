@@ -1,6 +1,6 @@
 <script>
-  import GameTeaser from '../../components/GameTeaser.svelte';
-  export let data, helpers;
+  import GameTeaser from '../../components/GameTeaser.svelte'
+  export let data, helpers
 </script>
 
 <style>
@@ -34,27 +34,6 @@
     margin-bottom: 1rem;
     background: white;
   }
-  .about {
-    margin-bottom: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .hydrate {
-      display: grid;
-      grid-template-columns: 80% 20%;
-    }
-  }
-
-  .hooks {
-    display: grid;
-    grid-template-columns: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .hooks {
-      grid-template-columns: 50% 50%;
-    }
-  }
 </style>
 
 <svelte:head>
@@ -66,10 +45,8 @@
   <p>Check the game compatibility below</p>
 </div>
 
-<div class="blog">
-  <div class="entries">
-    {#each data.markdown.game as game}
-      <GameTeaser {game} {helpers} />
-    {/each}
-  </div>
+<div class="entries">
+  {#each data.markdown.game as game}
+    <GameTeaser {game} {helpers} />
+  {/each}
 </div>
