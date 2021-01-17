@@ -12,7 +12,10 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '12'
-    - name: Run Content Updater
+    - name: Package install
+      run: |
+        yarn install
+    - name: Update the Content
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
@@ -21,7 +24,15 @@ jobs:
 
         git config --global user.email "you@example.com"
         git config --global user.name "Marvin"
-        git status
         git add .
-        git commit -m "test"
+        git commit -m "update content"
         git push
+    - name: Build
+      run: |
+        yarn run build
+    - name: Deploy
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/macabeus/ryujinx-catalog.git
+        yarn run deploy
