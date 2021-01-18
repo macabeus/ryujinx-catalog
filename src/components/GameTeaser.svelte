@@ -1,4 +1,6 @@
 <script>
+  import Tags from './Tags.svelte'
+
   export let game
   export let helpers
 </script>
@@ -8,22 +10,18 @@
     width: 275px;
   }
 
-  .tag {
-    color: white;
-    border-radius: 5px;
-    padding: 1px 3px;
+  .entry {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background: white;
   }
 
-  .tag:not(:last-child) {
-    margin-right: 5px;
-  }
-
-  .tag.audio {
-    background-color: #1A99D9;
-  }
-
-  .tag.playable {
-    background-color: #0DDE9C;
+  @media (min-width: 768px) {
+    .entry {
+      margin-right: 1rem;
+    }
   }
 </style>
 
@@ -31,7 +29,5 @@
   <img class="coverImage" src={game.frontmatter.coverImage} alt="Game Cover" />
   <a href={helpers.permalinks.game({ slug: game.slug })}>{game.frontmatter.title}</a>
 
-  {#each game.frontmatter.tags as tag}
-    <span class={`tag ${tag}`}>{tag}</span>
-  {/each}
+  <Tags tags={game.frontmatter.tags} />
 </div>
