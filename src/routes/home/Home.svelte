@@ -1,6 +1,19 @@
 <script>
   import GameList from '../../components/GameList.svelte'
+  import chunk from '../../misc/chunk'
   export let data, helpers
+
+  const gamesTableColumns = 2
+
+  const games = chunk(
+    data.markdown.game.map(game => ({
+      coverImage: game.frontmatter.coverImage,
+      tags: game.frontmatter.tags,
+      permalink: helpers.permalinks.game({ slug: game.slug }),
+      title: game.frontmatter.title,
+    })),
+    gamesTableColumns
+  )
 </script>
 
 <style>
@@ -21,4 +34,4 @@
   <p>Check the game compatibility below</p>
 </div>
 
-<GameList games={data.markdown.game} {helpers} />
+<GameList hydrate-client={{ games }} />

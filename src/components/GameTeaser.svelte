@@ -2,32 +2,29 @@
   import Tags from './Tags.svelte'
 
   export let game
-  export let helpers
 </script>
 
 <style>
   .coverImage {
-    width: 275px;
+    width: 300px;
+    height: 400px;
   }
 
   .entry {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    background: white;
-  }
+    display: flex;
+    flex-direction: column;
 
-  @media (min-width: 768px) {
-    .entry {
-      margin-right: 1rem;
-    }
+    height: 450px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: white;
   }
 </style>
 
 <div class="entry">
-  <img class="coverImage" src={game.frontmatter.coverImage} alt="Game Cover" />
-  <a href={helpers.permalinks.game({ slug: game.slug })}>{game.frontmatter.title}</a>
+  <img class="coverImage" src={game.coverImage} alt="Game Cover" />
+  <a href={game.permalink}>{game.title}</a>
 
-  <Tags tags={game.frontmatter.tags} />
+  <Tags tags={game.tags} />
 </div>

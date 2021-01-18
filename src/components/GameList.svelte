@@ -1,27 +1,21 @@
 <script>
+  import VirtualList from '@sveltejs/svelte-virtual-list'
   import GameTeaser from './GameTeaser.svelte'
   export let games
-  export let helpers
 </script>
 
 <style>
-  .entries {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 3rem 0;
-  }
-
-  @media (min-width: 768px) {
-    .entries {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin: 3rem 0;
-    }
+  .row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
   }
 </style>
 
-<div class="entries">
-  {#each games as game}
-    <GameTeaser {game} {helpers} />
-  {/each}
-</div>
+<VirtualList height='700px' itemHeight={534} items={games} let:item>
+  <div class='row'>
+    {#each item as game}
+      <GameTeaser game={game} />
+    {/each}
+  </div>
+</VirtualList>
