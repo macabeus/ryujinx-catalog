@@ -1,6 +1,6 @@
 ---
 title: 'Undertale'
-coverImage: '/gamesCoverImage/undertale.jpg'
+coverImage: '/ryujinx-catalog/gamesCoverImage/undertale.jpg'
 tags:
   - playable
 ---

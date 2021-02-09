@@ -1,6 +1,6 @@
 ---
 title: 'Paper Mario The Origami King'
-coverImage: '/gamesCoverImage/paperMarioTheOrigamiKing.jpg'
+coverImage: '/ryujinx-catalog/gamesCoverImage/paperMarioTheOrigamiKing.jpg'
 tags:
   - audio
   - playable

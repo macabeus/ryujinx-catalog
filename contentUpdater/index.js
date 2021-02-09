@@ -10,7 +10,7 @@ const toCamelCase = (text) =>
 const getFileContent = (name, labels, body) =>
   `---
 title: '${name}'
-coverImage: '/gamesCoverImage/paperMarioTheOrigamiKing.jpg'
+coverImage: '/ryujinx-catalog/gamesCoverImage/paperMarioTheOrigamiKing.jpg'
 tags:
 ${labels.map((label) => `  - ${label}`).join('\n')}
 ---

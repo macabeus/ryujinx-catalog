@@ -855,10 +855,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@elderjs/elderjs@^1.2.4":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@elderjs/elderjs/-/elderjs-1.2.5.tgz#18ccbc7514f0d4465560f361a757dfdcff8d6b3d"
-  integrity sha512-f/jE+eF5UiR7pBJjOAFp73Nh3j5HSqighno+9ub44W11NiolkW6khmwXbHNCLKTwGrKcNjtLSQi6MBKxKQtKHQ==
+"@elderjs/elderjs@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@elderjs/elderjs/-/elderjs-1.3.1.tgz#69436f51449b67672f258fc0f7d40963df4b6551"
+  integrity sha512-7mhrmxi2q8RUcMNwCiSUgcOfVfQqp+5vtv5vsWYQIDRimqIWJA5zCUrrQH1ySfpGAwIa5pLyl5MaPm2DjwnI3g==
   dependencies:
     "@babel/core" "^7.11.6"
     "@babel/preset-env" "^7.11.5"
@@ -877,6 +877,7 @@
     fs-extra "^9.0.1"
     glob "^7.1.6"
     lodash.defaultsdeep "^4.6.1"
+    lodash.get "^4.4.2"
     lodash.kebabcase "^4.1.1"
     nanoid "^3.1.12"
     rollup "^2.21.0"
@@ -887,14 +888,14 @@
     svelte "3.29.7"
     yup "^0.29.3"
 
-"@elderjs/plugin-browser-reload@^0.1.6":
+"@elderjs/plugin-browser-reload@0.1.21":
   version "0.1.21"
   resolved "https://registry.yarnpkg.com/@elderjs/plugin-browser-reload/-/plugin-browser-reload-0.1.21.tgz#a65678fb71aba3d1def8cf5fcc671856267973fc"
   integrity sha512-sdRd8hq/Fii5MYZ+qt1zNP1C88g2TxRLZMqlnWckzPb7TJmv+X46scVSPxcNxXw0fHTac3owI26229WALiXdHQ==
   dependencies:
     socket.io "^2.3.0"
 
-"@elderjs/plugin-markdown@^0.1.6":
+"@elderjs/plugin-markdown@0.1.21":
   version "0.1.21"
   resolved "https://registry.yarnpkg.com/@elderjs/plugin-markdown/-/plugin-markdown-0.1.21.tgz#500ea9c22704e6585e35e019a66576244aa6b1e9"
   integrity sha512-tsH5Wq6Nh1zQMFz2BWO/GnGkZ4Fh34HKqIDOrPQGwc41oFg/j4TWta9VVxefrc0jswnpYcDaNoHIvYe+3/lbYw==
@@ -4497,6 +4498,11 @@ lodash.defaultsdeep@^4.6.1:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.defaultsdeep/-/lodash.defaultsdeep-4.6.1.tgz#512e9bd721d272d94e3d3a63653fa17516741ca6"
   integrity sha512-3j8wdDzYuWO3lM3Reg03MuQR957t287Rpcxp1njpEa8oDrikb+FwGdW3n+FELh/A6qib6yPit0j/pv9G/yeAqA==
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
 lodash.kebabcase@^4.1.1:
   version "4.1.1"

@@ -1,6 +1,6 @@
 ---
 title: 'Tropico 6'
-coverImage: '/gamesCoverImage/tropico6.jpg'
+coverImage: '/ryujinx-catalog/gamesCoverImage/tropico6.jpg'
 tags:
   - crash
   - boots

@@ -1,5 +1,5 @@
 <script>
-  export let templateHtml
+  export let templateHtml, settings
 </script>
 
 <style>
@@ -19,7 +19,7 @@
 </style>
 
 <svelte:head>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href={`${settings.prefix}/style.css`} />
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
 </svelte:head>
 <div class="container">

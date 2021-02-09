@@ -18,7 +18,7 @@
 <style>
   .searchInput {
     padding: 4px 4px 4px 32px;
-    background: url('/icons/magnifyingGlass.svg') no-repeat scroll 4px 1px;
+    background: url('/ryujinx-catalog/icons/magnifyingGlass.svg') no-repeat scroll 4px 1px;
     width: calc(100% - 36px);
     border: none;
     border-bottom: 1px solid rgba(16, 16, 16, 0.95);

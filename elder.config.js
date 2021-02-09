@@ -6,7 +6,7 @@ module.exports = {
   rootDir: process.cwd(),
   build: {},
   server: {
-    prefix: '',
+    prefix: '/ryujinx-catalog',
   },
   debug: {
     stacks: false,

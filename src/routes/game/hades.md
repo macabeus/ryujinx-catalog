@@ -1,6 +1,6 @@
 ---
 title: 'Hades'
-coverImage: '/gamesCoverImage/hades.jpg'
+coverImage: '/ryujinx-catalog/gamesCoverImage/hades.jpg'
 tags:
   - gpu
   - slow

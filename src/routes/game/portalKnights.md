@@ -1,6 +1,6 @@
 ---
 title: 'Portal Knights'
-coverImage: '/gamesCoverImage/portalKnights.jpg'
+coverImage: '/ryujinx-catalog/gamesCoverImage/portalKnights.jpg'
 tags:
   - crash
   - menus

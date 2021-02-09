@@ -1,6 +1,6 @@
 ---
 title: 'Dust: An Elysian Tail'
-coverImage: '/gamesCoverImage/dustAnElysianTail.jpg'
+coverImage: '/ryujinx-catalog/gamesCoverImage/dustAnElysianTail.jpg'
 tags:
   - gpu
   - regression
