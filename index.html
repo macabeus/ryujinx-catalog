@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Ryujinx Catalog</title><link rel="stylesheet" href="/ryujinx-catalog/style.css" class="svelte-1ibwxgp" data-svelte="svelte-3znp9m"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-1ibwxgp" data-svelte="svelte-3znp9m"><link rel="stylesheet" href="/ryujinx-catalog/_elderjs/assets/svelte-eea69f4e.css" media="all" /><style></style></head><body class="home">
+<div class="container svelte-1ibwxgp">
+
+<div class="banner svelte-1p2vfvp"><h1>Ryujinx Catalog</h1>
+  <p>Check the game compatibility below</p></div>
+
+<div class="gamessection-component" id="gamessectionJgTSDsRgXl"><input placeholder="Search" class="searchInput svelte-14fkfyp">
+
+<div class="spacing svelte-1ibj1i4"></div>
+
+<svelte-virtual-list-viewport style="height: 700px;" class="svelte-6oopgv"><svelte-virtual-list-contents style="padding-top: 0px; padding-bottom: 0px;" class="svelte-6oopgv"></svelte-virtual-list-contents></svelte-virtual-list-viewport></div></div>
+    <script type="text/javascript">
+      if (!('IntersectionObserver' in window)) {
+          var script = document.createElement("script");
+          script.src = "/ryujinx-catalog/_elderjs/static/intersection-observer.js";
+          document.getElementsByTagName('head')[0].appendChild(script);
+      };
+      </script>
+      
+    <script>var gamessectionPropsJgTSDsRgXl = (function(a,b,c,d,e,f){return {allGames:[{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002FdustAnElysianTail.jpg",tags:[b,"regression","ingame"],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FdustAnElysianTail\u002F",title:"Dust: An Elysian Tail"},{coverImage:c,tags:[d,a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fexample\u002F",title:"Example"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Fhades.jpg",tags:[b,"slow",e],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fhades\u002F",title:"Hades"},{coverImage:c,tags:[d,a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FpaperMarioTheOrigamiKing\u002F",title:"Paper Mario The Origami King"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002FportalKnights.jpg",tags:[f,"menus"],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FportalKnights\u002F",title:"Portal Knights"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Ftropico6.jpg",tags:[f,e],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Ftropico6\u002F",title:"Tropico 6"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Fundertale.jpg",tags:[a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fundertale\u002F",title:"Undertale"}]}}("playable","gpu","\u002Fryujinx-catalog\u002FgamesCoverImage\u002FpaperMarioTheOrigamiKing.jpg","audio","boots","crash"));</script>     
+        <script type="module">
+        function initgamessectionJgTSDsRgXl(){
+          import("/ryujinx-catalog/_elderjs/svelte/components/GamesSection.e4f3c559.js").then((component)=>{
+            new component.default({ 
+              target: document.getElementById('gamessectionJgTSDsRgXl'),
+              props: gamessectionPropsJgTSDsRgXl,
+              hydrate: true
+              });
+          });
+        }
+        
+      window.addEventListener('load', function (event) {
+        var observerJgTSDsRgXl = new IntersectionObserver(function(entries, observer) {
+          var objK = Object.keys(entries);
+          var objKl = objK.length;
+          var objKi = 0;
+          for (; objKi < objKl; objKi++) {
+            var entry = entries[objK[objKi]];
+            if (entry.isIntersecting) {
+              observer.unobserve(document.getElementById('gamessectionJgTSDsRgXl'));
+              if (document.eg_gamessection) {
+                initgamessectionJgTSDsRgXl();
+              } else {
+                document.eg_gamessection = true;
+                initgamessectionJgTSDsRgXl();
+              }
+            }
+          }
+        }, {
+          rootMargin: '200px',
+          threshold: 0
+        });
+        observerJgTSDsRgXl.observe(document.getElementById('gamessectionJgTSDsRgXl'));
+      });
+    
+        </script>
+    
+    
+    </body></html>
