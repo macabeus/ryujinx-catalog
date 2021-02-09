@@ -37,8 +37,15 @@ Whenever an issue is opened, updated, or closed, a GitHub Action is launched to 
 > :warning: It's for development only, because the content should be syn with the issues - and never be creating one by hand
 
 ```
-> node ./contentUpdater/index.js "opened" "GAME TITLE" "\"TAG_ONE\"
+> node ./contentUpdater/index.js "opened" "GAME NAME - TITLE ID" "\"TAG_ONE\"
 dquote> \"TAG_TWO\"" "BODY"
+```
+
+Example:
+
+```
+> node ./contentUpdater/index.js "opened" "Dust: An Elysian Tail - 0100B6E00A420000" "\"ingame\"
+dquote> \"gpu\"" "Game loads and goes in-game, but most initial menu graphics are now missing, and all other graphics seem corrupt."
 ```
 
 ### Deploy
