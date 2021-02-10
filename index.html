@@ -4,7 +4,7 @@
 <div class="banner svelte-1p2vfvp"><h1>Ryujinx Catalog</h1>
   <p>Check the game compatibility below</p></div>
 
-<div class="gamessection-component" id="gamessectionmJwnYbxmYj"><input placeholder="Search" class="searchInput svelte-14fkfyp">
+<div class="gamessection-component" id="gamessectionZMylJqvfrN"><input placeholder="Search" class="searchInput svelte-14fkfyp">
 
 <div class="spacing svelte-1ibj1i4"></div>
 
@@ -17,32 +17,32 @@
       };
       </script>
       
-    <script>var gamessectionPropsmJwnYbxmYj = (function(a,b,c,d,e,f){return {allGames:[{coverImage:b,tags:[c,a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fexample\u002F",title:"Example"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002FportalKnights.jpg",tags:[d,"menus"],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FportalKnights\u002F",title:"Portal Knights"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Fhades.jpg",tags:[e,"slow",f],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fhades\u002F",title:"Hades"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Fundertale.jpg",tags:[a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fundertale\u002F",title:"Undertale"},{coverImage:b,tags:[c,a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FpaperMarioTheOrigamiKing\u002F",title:"Paper Mario The Origami King"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002FdustAnElysianTail.jpg",tags:[e,"regression","ingame"],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FdustAnElysianTail\u002F",title:"Dust: An Elysian Tail"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Ftropico6.jpg",tags:[d,f],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Ftropico6\u002F",title:"Tropico 6"}]}}("playable","\u002Fryujinx-catalog\u002FgamesCoverImage\u002FpaperMarioTheOrigamiKing.jpg","audio","crash","gpu","boots"));</script>     
+    <script>var gamessectionPropsZMylJqvfrN = (function(a,b,c,d,e){return {allGames:[{coverImage:"https:\u002F\u002Fuser-images.githubusercontent.com\u002F9501115\u002F107456269-c82a5680-6b47-11eb-9396-ba15287f60e0.png",tags:[b,a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fexample\u002F",title:"Example"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002FportalKnights.jpg",tags:[c,"menus"],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FportalKnights\u002F",title:"Portal Knights"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Fhades.jpg",tags:[d,"slow",e],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fhades\u002F",title:"Hades"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Fundertale.jpg",tags:[a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Fundertale\u002F",title:"Undertale"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002FpaperMarioTheOrigamiKing.jpg",tags:[b,a],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FpaperMarioTheOrigamiKing\u002F",title:"Paper Mario The Origami King"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002FdustAnElysianTail.jpg",tags:[d,"regression","ingame"],permalink:"\u002Fryujinx-catalog\u002Fgame\u002FdustAnElysianTail\u002F",title:"Dust: An Elysian Tail"},{coverImage:"\u002Fryujinx-catalog\u002FgamesCoverImage\u002Ftropico6.jpg",tags:[c,e],permalink:"\u002Fryujinx-catalog\u002Fgame\u002Ftropico6\u002F",title:"Tropico 6"}]}}("playable","audio","crash","gpu","boots"));</script>     
         <script type="module">
-        function initgamessectionmJwnYbxmYj(){
+        function initgamessectionZMylJqvfrN(){
           import("/ryujinx-catalog/_elderjs/svelte/components/GamesSection.e4f3c559.js").then((component)=>{
             new component.default({ 
-              target: document.getElementById('gamessectionmJwnYbxmYj'),
-              props: gamessectionPropsmJwnYbxmYj,
+              target: document.getElementById('gamessectionZMylJqvfrN'),
+              props: gamessectionPropsZMylJqvfrN,
               hydrate: true
               });
           });
         }
         
       window.addEventListener('load', function (event) {
-        var observermJwnYbxmYj = new IntersectionObserver(function(entries, observer) {
+        var observerZMylJqvfrN = new IntersectionObserver(function(entries, observer) {
           var objK = Object.keys(entries);
           var objKl = objK.length;
           var objKi = 0;
           for (; objKi < objKl; objKi++) {
             var entry = entries[objK[objKi]];
             if (entry.isIntersecting) {
-              observer.unobserve(document.getElementById('gamessectionmJwnYbxmYj'));
+              observer.unobserve(document.getElementById('gamessectionZMylJqvfrN'));
               if (document.eg_gamessection) {
-                initgamessectionmJwnYbxmYj();
+                initgamessectionZMylJqvfrN();
               } else {
                 document.eg_gamessection = true;
-                initgamessectionmJwnYbxmYj();
+                initgamessectionZMylJqvfrN();
               }
             }
           }
@@ -50,7 +50,7 @@
           rootMargin: '200px',
           threshold: 0
         });
-        observermJwnYbxmYj.observe(document.getElementById('gamessectionmJwnYbxmYj'));
+        observerZMylJqvfrN.observe(document.getElementById('gamessectionZMylJqvfrN'));
       });
     
         </script>
