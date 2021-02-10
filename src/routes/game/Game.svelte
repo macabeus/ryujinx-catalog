@@ -44,6 +44,10 @@
   :global(blockquote p) {
     padding: 0;
   }
+
+  :global(.body img) {
+    max-width: 900px;
+  }
 </style>
 
 <svelte:head>
@@ -55,8 +59,10 @@
   <h1>{frontmatter.title}</h1>
 </div>
 
-{#if html}
-  {@html html}
-{:else}
-  <h1>Oops!! Markdown not found!</h1>
-{/if}
+<div class="body">
+  {#if html}
+    {@html html}
+  {:else}
+    <h1>Oops!! Markdown not found!</h1>
+  {/if}
+</div>
