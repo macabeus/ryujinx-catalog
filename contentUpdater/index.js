@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 const fs = require('fs')
 
-const toCamelCase = (text) =>
+const toKebabCase = (text) =>
   text
     .toLowerCase()
-    .replace(/ (.)/g, (char) => char.toUpperCase())
-    .replace(/ /g, '')
+    .replace(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9: ]/g, '')
+    .replace(/ |:/g, '-')
+    .replace(/--/g, '-')
 
 const bodyToStructureMap = (body) =>
   body.split('\n').reduce(
@@ -39,7 +40,7 @@ const bodyToStructureMap = (body) =>
 const generateFileContent = (name, labels, converImage, screenshots, body) =>
   `---
 title: '${name}'
-slug: '${toCamelCase(name)}'
+slug: '${toKebabCase(name)}'
 coverImage: '${converImage}'
 tags:
 ${labels.map((label) => `  - ${label}`).join('\n')}
