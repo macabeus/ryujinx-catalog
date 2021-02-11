@@ -1,5 +1,6 @@
 <script>
   import EditButton from '../../components/EditButton.svelte';
+  import Tags from '../../components/Tags.svelte';
   export let data, settings; // data is mainly being populated from elderjs-plugin-markdown
   const { html, frontmatter } = data;
 </script>
@@ -64,6 +65,8 @@
   <h1>{frontmatter.title}</h1>
   <EditButton url={frontmatter.issue} settingsPrefix={settings.prefix} />
 </div>
+
+<Tags tags={frontmatter.tags} />
 
 <div class="body">
   {#if html}
