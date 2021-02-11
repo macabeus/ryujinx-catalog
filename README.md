@@ -39,7 +39,7 @@ Whenever an issue is opened, updated, or closed, a GitHub Action is launched to 
 Use the following pattern (the break lines matters):
 
 ```
-> node ./contentUpdater/index.js "opened" "GAME NAME - TITLE ID" "\"TAG_ONE\"
+> node ./contentUpdater/index.js "opened" "ISSUE URL" "GAME NAME - TITLE ID" "\"TAG_ONE\"
 \"TAG_TWO\"" "## Description
 Description.
 ## Cover
@@ -51,7 +51,7 @@ Image URL
 Example:
 
 ```
-> node ./contentUpdater/index.js "opened" "Example Dust: An Elysian Tail - 0100B6E00A420666" "\"ingame\"
+> node ./contentUpdater/index.js "opened" "https://github.com/macabeus/ryujinx-catalog/issues/1" "Example Dust: An Elysian Tail - 0100B6E00A420666" "\"ingame\"
 \"gpu\"" "## Description
 Game loads and goes in-game, but most initial menu graphics are now missing, and all other graphics seem corrupt.
 ## Cover

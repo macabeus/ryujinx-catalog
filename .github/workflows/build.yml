@@ -20,7 +20,7 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         labels=$(echo "$GITHUB_CONTEXT" | jq '.event.issue.labels[].name')
-        node ./contentUpdater/index.js "${{ github.event.action }}" "${{ github.event.issue.title }}" "${labels}" "${{ github.event.issue.body }}"
+        node ./contentUpdater/index.js "${{ github.event.action }}" "${{ github.event.issue.html_url }}" "${{ github.event.issue.title }}" "${labels}" "${{ github.event.issue.body }}"
 
         git config --global user.email "you@example.com"
         git config --global user.name "Marvin"

@@ -1,4 +1,5 @@
 <script>
+  import EditButton from '../../components/EditButton.svelte';
   export let data, settings; // data is mainly being populated from elderjs-plugin-markdown
   const { html, frontmatter } = data;
 </script>
@@ -9,6 +10,10 @@
   }
 
   .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
@@ -57,6 +62,7 @@
 
 <div class="title">
   <h1>{frontmatter.title}</h1>
+  <EditButton url={frontmatter.issue} settingsPrefix={settings.prefix} />
 </div>
 
 <div class="body">

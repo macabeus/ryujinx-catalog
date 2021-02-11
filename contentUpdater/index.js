@@ -37,11 +37,12 @@ const bodyToStructureMap = (body) =>
     { structureMap: {}, currentSection: null },
   ).structureMap
 
-const generateFileContent = (name, labels, converImage, screenshots, body) =>
+const generateFileContent = (issueUrl, name, labels, converImage, screenshots, body) =>
   `---
 title: '${name}'
 slug: '${toKebabCase(name)}'
 coverImage: '${converImage}'
+issue: '${issueUrl}'
 tags:
 ${labels.map((label) => `  - ${label}`).join('\n')}
 ---
@@ -56,9 +57,10 @@ const regexCaptureIssueTitle = /(.*)\s-\s([0-9A-F]+)$/
 
 if (require.main === module) {
   const eventName = process.argv[2]
-  const issueTitle = process.argv[3]
-  const issueLabels = process.argv[4].replace(/"/g, '').split('\n')
-  const issueBody = process.argv[5].replace(/\r/g, '')
+  const issueUrl = process.argv[3]
+  const issueTitle = process.argv[4]
+  const issueLabels = process.argv[5].replace(/"/g, '').split('\n')
+  const issueBody = process.argv[6].replace(/\r/g, '')
 
   if (regexCaptureIssueTitle.test(issueTitle) === false) {
     console.error(
@@ -72,6 +74,7 @@ if (require.main === module) {
   const structureMap = bodyToStructureMap(issueBody)
 
   const fileContent = generateFileContent(
+    issueUrl,
     titleName,
     issueLabels,
     structureMap['Cover'][0],
