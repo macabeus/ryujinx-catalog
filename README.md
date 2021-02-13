@@ -44,6 +44,7 @@ Use the following pattern (the break lines matters):
 Description.
 ## Cover
 Image URL
+- Position Y: background-position-y value <!-- optional -->
 ## Screenshots
 \![image](Image Url)"
 ```
@@ -56,6 +57,7 @@ Example:
 Game loads and goes in-game, but most initial menu graphics are now missing, and all other graphics seem corrupt.
 ## Cover
 https://user-images.githubusercontent.com/9501115/107456269-c82a5680-6b47-11eb-9396-ba15287f60e0.png
+- Position Y: 80%
 ## Screenshots
 \![image](https://user-images.githubusercontent.com/9501115/107456115-8a2d3280-6b47-11eb-9d92-c0f0f6f1825f.png)"
 ```

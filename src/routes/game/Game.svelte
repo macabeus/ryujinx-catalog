@@ -22,7 +22,8 @@
     background-image: var(--background-image);
     filter: brightness(0.4);
     background-size: cover;
-    background-position: center;
+    background-position-x: center;
+    background-position-y: var(--background-position-y);
     z-index: -1;
   }
 
@@ -87,7 +88,10 @@
 </svelte:head>
 
 <div class="banner-container">
-  <div class="banner-background" style={`--background-image: url(${frontmatter.coverImage})`} />
+  <div
+    class="banner-background"
+    style={`--background-image: url(${frontmatter.coverImage}); --background-position-y: ${frontmatter.coverImagePositionY}`}
+  />
 
   <h1>{frontmatter.title}</h1>
 </div>
