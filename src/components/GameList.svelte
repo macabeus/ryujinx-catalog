@@ -16,6 +16,10 @@
   }
 </style>
 
+{#if games.length === 0}
+  No game to list. Try changing your search.
+{/if}
+
 <VirtualList height='calc(100vh - 150px)' itemHeight={514} items={chunk(games, gamesTableColumns)} let:item>
   <div class='row'>
     {#each item as game}
