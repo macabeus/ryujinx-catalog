@@ -1,5 +1,6 @@
 <script>
   import Header from '../components/Header.svelte'
+  import Footer from '../components/Footer.svelte'
   export let templateHtml, settings
 </script>
 
@@ -11,6 +12,16 @@
     --balloon-color: #06395a;
     --balloon-font-size: 14px;
   }
+
+  /* footer related classes */
+  .page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .content-wrap {
+    padding-bottom: 170px; /* footer height */
+  }
 </style>
 
 <svelte:head>
@@ -20,4 +31,10 @@
 
 <Header settingsPrefix={settings.prefix} />
 
-{@html templateHtml}
+<div class="page-container">
+  <div class="content-wrap">
+    {@html templateHtml}
+  </div>
+
+  <Footer settingsPrefix={settings.prefix} />
+</div>
