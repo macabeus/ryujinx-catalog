@@ -4,7 +4,6 @@
 
 <style>
   .tag {
-    color: white;
     border-radius: 5px;
     padding: 1px 3px;
   }

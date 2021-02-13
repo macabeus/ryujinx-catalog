@@ -5,7 +5,7 @@
 
   export let games
 
-  const gamesTableColumns = 2
+  const gamesTableColumns = 3
 </script>
 
 <style>
@@ -16,7 +16,7 @@
   }
 </style>
 
-<VirtualList height='700px' itemHeight={534} items={chunk(games, gamesTableColumns)} let:item>
+<VirtualList height='calc(100vh - 150px)' itemHeight={514} items={chunk(games, gamesTableColumns)} let:item>
   <div class='row'>
     {#each item as game}
       <GameTeaser game={game} />

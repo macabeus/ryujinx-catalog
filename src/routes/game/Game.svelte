@@ -6,19 +6,36 @@
 </script>
 
 <style>
-  h1 {
-    margin-bottom: 10px;
+  .banner-container {
+    height: 357px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
   }
 
-  .title {
+  .banner-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: var(--background-image);
+    filter: brightness(0.4);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
+  .body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .body-preface {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
   }
 
   :global(h2) {
@@ -54,21 +71,33 @@
   :global(.body img) {
     max-width: 900px;
   }
+
+  :global(.body h1) {
+    margin-bottom: 10px;
+  }
+
+  :global(.body pre) {
+    color: #555;
+    overflow: scroll;
+  }
 </style>
 
 <svelte:head>
   <title>{frontmatter.title}</title>
 </svelte:head>
-<a href={settings.prefix}>&LeftArrow; Home</a>
 
-<div class="title">
+<div class="banner-container">
+  <div class="banner-background" style={`--background-image: url(${frontmatter.coverImage})`} />
+
   <h1>{frontmatter.title}</h1>
-  <EditButton url={frontmatter.issue} settingsPrefix={settings.prefix} />
 </div>
 
-<Tags tags={frontmatter.tags} />
-
 <div class="body">
+  <div class="body-preface">
+    <Tags tags={frontmatter.tags} />
+    <EditButton url={frontmatter.issue} settingsPrefix={settings.prefix} />
+  </div>
+
   {#if html}
     {@html html}
   {:else}
