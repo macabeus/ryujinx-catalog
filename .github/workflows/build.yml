@@ -18,9 +18,11 @@ jobs:
     - name: Update the Content
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
+      id: update-content
       run: |
         labels=$(echo "$GITHUB_CONTEXT" | jq '.event.issue.labels[].name')
-        node ./contentUpdater/index.js "${{ github.event.action }}" "${{ github.event.issue.html_url }}" "${{ github.event.issue.title }}" "${labels}" "${{ github.event.issue.body }}"
+        SLUG=$(node ./contentUpdater/index.js "${{ github.event.action }}" "${{ github.event.issue.html_url }}" "${{ github.event.issue.title }}" "${labels}" "${{ github.event.issue.body }}")
+        echo "::set-output name=SLUG::$SLUG"
 
         git config --global user.email "you@example.com"
         git config --global user.name "Marvin"
@@ -36,3 +38,10 @@ jobs:
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/macabeus/ryujinx-catalog.git
         yarn run deploy
+    - name: Add comment on issue
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          Deployed 🚀
+          Checkout at [${{ steps.update-content.outputs.SLUG }}](https://macabeus.github.io/ryujinx-catalog/game/${{ steps.update-content.outputs.SLUG }})

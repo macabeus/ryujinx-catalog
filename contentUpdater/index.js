@@ -37,10 +37,10 @@ const bodyToStructureMap = (body) =>
     { structureMap: {}, currentSection: null },
   ).structureMap
 
-const generateFileContent = (issueUrl, name, labels, converImage, coverImagePositionY, screenshots, body) =>
+const generateFileContent = (issueUrl, name, slug, labels, converImage, coverImagePositionY, screenshots, body) =>
   `---
 title: '${name}'
-slug: '${toKebabCase(name)}'
+slug: '${slug}'
 coverImage: '${converImage}'
 coverImagePositionY: '${coverImagePositionY}'
 issue: '${issueUrl}'
@@ -74,6 +74,7 @@ if (require.main === module) {
 
   const structureMap = bodyToStructureMap(issueBody)
 
+  const slug = toKebabCase(titleName)
   const coverImage = structureMap['Cover'][0]
   const coverImagePositionY = structureMap['Cover'][1]
     ? structureMap['Cover'][1].replace('- Position Y: ', '')
@@ -84,6 +85,7 @@ if (require.main === module) {
   const fileContent = generateFileContent(
     issueUrl,
     titleName,
+    slug,
     issueLabels,
     coverImage,
     coverImagePositionY,
@@ -92,6 +94,6 @@ if (require.main === module) {
   )
 
   fs.writeFile(`./src/routes/game/${titleId}.md`, fileContent, () => {
-    console.log('file written')
+    console.log(slug)
   })
 }
