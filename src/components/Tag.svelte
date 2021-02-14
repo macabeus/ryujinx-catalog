@@ -1,11 +1,38 @@
 <script>
+  import { getContext } from 'svelte'
+  import { key } from '../contexts/tagsFilter'
+
   export let tag
+
+  const tagsFilterContext = getContext(key)
+
+  const hasTagsFilterContext = (tagsFilterContext !== undefined)
+
+  const onTagClick = () =>
+    tagsFilterContext.toggleTag(tag)
 </script>
 
 <style>
   .tag {
+    border: none;
+    outline: none;
+
+    margin-right: 0.45rem;
     border-radius: 5px;
     padding: 1px 3px;
+
+    color: white;
+    font-size: 0.9rem;
+
+    transition: filter 0.2s ease-out;
+  }
+
+  .tag.can-filter {
+    cursor: pointer;
+  }
+
+  .tag.can-filter:hover {
+    filter: brightness(120%);
   }
 
   .tag.audio {
@@ -45,4 +72,10 @@
   }
 </style>
 
-<span class={`tag ${tag}`}>{tag}</span>
+<button
+  class={`tag ${tag} ${hasTagsFilterContext && 'can-filter'}`}
+  disabled={hasTagsFilterContext === false}
+  on:click={onTagClick}
+>
+  {tag}
+</button>
