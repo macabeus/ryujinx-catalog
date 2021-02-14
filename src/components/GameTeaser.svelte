@@ -9,7 +9,8 @@
     other: 'rgb(201, 209, 161)',
   }
 
-  const borderColor = (
+  let borderColor
+  $: borderColor = (
     game.tags.includes('playable')
       ? borderColors.playable
     : game.tags.includes('crash')
