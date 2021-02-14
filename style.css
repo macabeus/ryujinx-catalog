@@ -25,3 +25,19 @@ body {
     'Helvetica Neue', sans-serif;
   background: #303036;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #555561;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #808087;
+}
+::-webkit-scrollbar-track{
+  background: transparent;
+  border-radius: 0px;
+}
