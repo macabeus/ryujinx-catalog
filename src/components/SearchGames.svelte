@@ -10,7 +10,8 @@
   $: if (filter === '') {
     dispatch('update', allGames)
   } else {
-    const gamesFiltered = allGames.filter(game => game.title.includes(filter))
+    const gamesFiltered = allGames
+      .filter(game => game.title.toLowerCase().includes(filter.toLowerCase()))
     dispatch('update', gamesFiltered)
   }
 </script>
