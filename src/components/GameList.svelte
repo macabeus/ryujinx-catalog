@@ -9,6 +9,11 @@
 </script>
 
 <style>
+  :global(.virtual-list-container > *) {
+    scrollbar-color: #555561 #808087;
+    scrollbar-width: thin;
+  }
+
   .row {
     display: flex;
     justify-content: space-around;
@@ -20,10 +25,12 @@
   No game to list. Try changing your search.
 {/if}
 
-<VirtualList height='calc(100vh - 150px)' itemHeight={325} items={chunk(games, gamesTableColumns)} let:item>
-  <div class='row'>
-    {#each item as game}
-      <GameTeaser game={game} />
-    {/each}
-  </div>
-</VirtualList>
+<div class="virtual-list-container">
+  <VirtualList height='calc(100vh - 150px)' itemHeight={325} items={chunk(games, gamesTableColumns)} class='container' let:item>
+    <div class='row'>
+      {#each item as game}
+        <GameTeaser game={game} />
+      {/each}
+    </div>
+  </VirtualList>
+</div>
