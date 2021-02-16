@@ -37,12 +37,13 @@ const bodyToStructureMap = (body) =>
     { structureMap: {}, currentSection: null },
   ).structureMap
 
-const generateFileContent = (issueUrl, name, slug, labels, converImage, coverImagePositionY, screenshots, body) =>
+const generateFileContent = (issueUrl, name, slug, labels, squareImage, bannerImage, bannerPositionY, screenshots, body) =>
   `---
 title: '${name}'
 slug: '${slug}'
-coverImage: '${converImage}'
-coverImagePositionY: '${coverImagePositionY}'
+squareImage: '${squareImage}'
+bannerImage: '${bannerImage}'
+bannerPositionY: '${bannerPositionY}'
 issue: '${issueUrl}'
 tags:
 ${labels.map((label) => `  - ${label}`).join('\n')}
@@ -75,10 +76,11 @@ if (require.main === module) {
   const structureMap = bodyToStructureMap(issueBody)
 
   const slug = toKebabCase(titleName)
-  const coverImage = structureMap['Cover'][0]
-  const coverImagePositionY = structureMap['Cover'][1]
-    ? structureMap['Cover'][1].replace('- Position Y: ', '')
-    : 'center'
+  const squareImage = structureMap['Images'][0]
+  const bannerImage = structureMap['Images'][1]
+  const bannerPositionY = structureMap['Images'][2]
+    ? structureMap['Images'][2].replace('- Position Y: ', '')
+    : '50%'
   const screenshots = structureMap['Screenshots']
   const description = structureMap['Description']
 
@@ -87,8 +89,9 @@ if (require.main === module) {
     titleName,
     slug,
     issueLabels,
-    coverImage,
-    coverImagePositionY,
+    squareImage,
+    bannerImage,
+    bannerPositionY,
     screenshots,
     description,
   )

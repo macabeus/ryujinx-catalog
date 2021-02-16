@@ -7,7 +7,7 @@
 
 <style>
   .banner-container {
-    height: 357px;
+    height: 360px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -15,15 +15,14 @@
     box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
   }
 
-  .banner-background {
+  :global(.banner-background) {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: var(--background-image);
     filter: brightness(0.4);
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: var(--background-position-y);
+    object-fit: cover;
+    object-position: 100% var(--banner-position-y);
+    background-position-y: 50%;
     z-index: -1;
   }
 
@@ -88,10 +87,14 @@
 </svelte:head>
 
 <div class="banner-container">
-  <div
-    class="banner-background"
-    style={`--background-image: url(${frontmatter.coverImage}); --background-position-y: ${frontmatter.coverImagePositionY}`}
-  />
+  <div class="banner-background" style={`--banner-position-y: ${frontmatter.bannerPositionY}`}>
+    <img
+      class="banner-background"
+      src={frontmatter.bannerImage}
+      alt="Game Banner"
+      referrerPolicy="no-referrer"
+    />
+  </div>
 
   <h1>{frontmatter.title}</h1>
 </div>

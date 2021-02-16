@@ -5,7 +5,7 @@
 
   export let games
 
-  const gamesTableColumns = 3
+  const gamesTableColumns = 4
 </script>
 
 <style>
@@ -20,7 +20,7 @@
   No game to list. Try changing your search.
 {/if}
 
-<VirtualList height='calc(100vh - 150px)' itemHeight={514} items={chunk(games, gamesTableColumns)} let:item>
+<VirtualList height='calc(100vh - 150px)' itemHeight={325} items={chunk(games, gamesTableColumns)} let:item>
   <div class='row'>
     {#each item as game}
       <GameTeaser game={game} />

@@ -20,13 +20,13 @@
 </script>
 
 <style>
-  .cover-image {
-    width: 300px;
-    height: 400px;
+  .square-image {
+    width: 256px;
+    height: 256px;
     transition: transform 0.2s ease-out;
   }
 
-  .cover-image:hover {
+  .square-image:hover {
     transform: scale(0.975);
   }
 
@@ -34,7 +34,6 @@
     display: flex;
     flex-direction: column;
 
-    height: 430px;
     border: 1px solid var(--border-color);
     padding: 1rem;
     border-radius: 1rem;
@@ -43,23 +42,30 @@
   }
 
   .entry-background {
-    background-image: var(--background-image);
     position: absolute;
-    height: 98%;
-    width: 98%;
+    height: 100%;
+    width: 100%;
     z-index: -1;
-    left: 5px;
-    top: 5px;
     border-radius: 1rem;
     filter: blur(10px) brightness(50%);
+    transform: scale(0.95);
+    top: 0;
+    left: 0;
+  }
+
+  .entry-background-image {
+    height: 100%;
+    width: 100%;
   }
 </style>
 
 <div class="entry" style={`--border-color: ${borderColor}`}>
-  <div class="entry-background" style={`--background-image: url(${game.coverImage})`} />
+  <div class="entry-background">
+    <img class="entry-background-image" src={game.squareImage} alt="Game Background" referrerPolicy="no-referrer" />
+  </div>
 
   <a href={game.permalink}>
-    <img class="cover-image" src={game.coverImage} alt="Game Cover" />
+    <img class="square-image" src={game.squareImage} alt="Game" referrerPolicy="no-referrer" />
   </a>
 
   <Tags tags={game.tags} />
