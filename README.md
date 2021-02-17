@@ -32,6 +32,8 @@ Whenever an issue is opened, updated, or closed, a GitHub Action is launched to 
 > yarn run dev:rollup
 ```
 
+5 - Then the service will start at the URL `http://0.0.0.0:3000/ryujinx-catalog/`
+
 ### Update a Content
 
 > :warning: It's for development only, because the content should be syn with the issues - and never be creating one by hand
