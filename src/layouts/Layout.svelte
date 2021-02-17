@@ -25,6 +25,7 @@
 </style>
 
 <svelte:head>
+  <meta name="referrer" content="never">
   <link rel="stylesheet" href={`${settings.prefix}/style.css`} />
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
   <link rel="icon" type="image/png" sizes="16x16" href={`${settings.prefix}/favicons/16x16.png`}>
