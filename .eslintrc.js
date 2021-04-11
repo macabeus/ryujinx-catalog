@@ -5,11 +5,8 @@ module.exports = {
     commonjs: false,
     es2020: true,
   },
-  plugins: ['prettier'],
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
-
+  extends: ['eslint:recommended'],
   rules: {
-    'prettier/prettier': ['error', { semi: false }],
     semi: ['error', 'never'],
     'no-var': ['error'],
     'no-console': ['off'],
